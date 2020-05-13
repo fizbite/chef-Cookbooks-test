@@ -11,7 +11,12 @@
 package 'httpd'
 
 file '/var/www/html/index.html' do
- content '<h1>Hello, world!</h1>'
+   content "<h1>FIZBITE</h1>
+   HOSTNAME: #{node['hostname']}
+   IPADDRESS: #{node['ipaddress']}
+   CPU: #{node['cpu'] ['0'] ['mhz']}
+   MEMORY: #{node['memory'] ['total']}
+"
 end
 
 service 'httpd' do
